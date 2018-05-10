@@ -1,16 +1,16 @@
-import React, {Component} from 'react';
+import React from 'react';
 import '.././sass/main.css';
-import fbIcon from '../images/fb.png'
-import gIcon from '../images/google.png'
+import LogInForm from "./LogInForm";
 import {
     Redirect
 } from 'react-router-dom';
+import Popup from "reactjs-popup";
 
 
 class WelcomeTyper extends React.Component {
 
     constructor(props) {
-        super(props)
+        super(props);
 
         this.state = {
             currentText: this.props.text[0],
@@ -20,8 +20,8 @@ class WelcomeTyper extends React.Component {
 
     componentDidMount() {
         this.interval = setInterval(() => {
-            let propsText = this.props.text
-            let stateText = this.state.currentText
+            let propsText = this.props.text;
+            let stateText = this.state.currentText;
 
             this.setState({
                 currentText: stateText + propsText[stateText.length]
@@ -32,7 +32,7 @@ class WelcomeTyper extends React.Component {
             })
 
 
-        }, 350)
+        }, 200)
     }
 
     componentWillUnmount() {
@@ -47,31 +47,36 @@ class WelcomeTyper extends React.Component {
         this.setState({
             redirect: true
         })
-    }
-
-    pageRotationOnClick = () => {
-
-    }
+    };
 
     render() {
 
         if (this.state.redirect)
-            return <Redirect to="/form"/>
+            return <Redirect to="/form"/>;
 
         return (
-            <div className="rotatePage">
+            <div>
                 <h1 className="welcome_text">{this.state.currentText}
                     <span className="cursor"> </span>
                 </h1>
-                <div className="underWelcomeLine"> </div>
-                <h2 className="welcomeUnderlineText">
-                    Please
-                    <button className="LogInBtn" onClick={this.goToFormPage}>Log In</button>
-                    or Sign Up with
-                    <a href="https://www.facebook.com/" target="_blank"><img src={fbIcon} className="fbIcon"/></a>
-                    or
-                    <a href="https://myaccount.google.com/" target="_blank"><img src={gIcon} className="gIcon"/></a>
+                <h2 className="LogInRegBtns">
+                    <Popup trigger={<button className="button LogInBtn"> Zaloguj się </button>}
+                           modal>
+                        {close => (
+                            <div className="modal">
+                                <a className="close" onClick={close}>&times;</a>
+                                <div className="header"> Zaloguj się </div>
+                                <div className="content"><LogInForm/></div>
+                            </div>
+                        )}
+                    </Popup>
+                    lub
+                    <button className="LogInBtn" onClick={this.goToFormPage}>Zarejestruj się</button>
                 </h2>
+                <div className="welcomeUnderBtnText">
+                    ...i korzystaj z bogatych możliwości premium gełdy profesjonalistów
+
+                </div>
             </div>
         )
     }
@@ -79,7 +84,7 @@ class WelcomeTyper extends React.Component {
 
 class Welcome extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
 
         this.state = {
             show: true
@@ -89,7 +94,7 @@ class Welcome extends React.Component {
     render() {
 
         if (this.state.show === true) {
-            return <WelcomeTyper changeActivePage={this.props.changeActivePage} text="WELCOME"/>
+            return <WelcomeTyper changeActivePage={this.props.changeActivePage} text="Super&nbsp;fachowca"/>
 
         } else {
             return <h2>404</h2>

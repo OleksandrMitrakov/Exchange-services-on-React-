@@ -1,41 +1,96 @@
 @font-face {
-  font-family: 'gaegubold';
-  src: url("../fonts/gaegu-bold.woff2") format("woff2"), url("../fonts/gaegu-bold.woff") format("woff");
+  font-family: 'robotoblack';
+  src: url("../fonts/roboto-black.woff2") format("woff2"), url("../fonts/roboto-black.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
-  font-family: 'gaegu_lightregular';
-  src: url("../fonts/gaegu-light.woff2") format("woff2"), url("../fonts/gaegu-light.woff") format("woff");
+  font-family: 'robotoblack_italic';
+  src: url("../fonts/roboto-blackitalic.woff2") format("woff2"), url("../fonts/roboto-blackitalic.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
-  font-family: 'gaeguregular';
-  src: url("../fonts/gaegu-regular.woff2") format("woff2"), url("../fonts/gaegu-regular.woff") format("woff");
+  font-family: 'robotobold';
+  src: url("../fonts/roboto-bold.woff2") format("woff2"), url("../fonts/roboto-bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'robotobold_italic';
+  src: url("../fonts/roboto-bolditalic.woff2") format("woff2"), url("../fonts/roboto-bolditalic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'robotoitalic';
+  src: url("../fonts/roboto-italic.woff2") format("woff2"), url("../fonts/roboto-italic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'robotolight';
+  src: url("../fonts/roboto-light.woff2") format("woff2"), url("../fonts/roboto-light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'robotolight_italic';
+  src: url("../fonts/roboto-lightitalic.woff2") format("woff2"), url("../fonts/roboto-lightitalic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'robotomedium';
+  src: url("../fonts/roboto-medium.woff2") format("woff2"), url("../fonts/roboto-medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'robotomedium_italic';
+  src: url("../fonts/roboto-mediumitalic.woff2") format("woff2"), url("../fonts/roboto-mediumitalic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'robotoregular';
+  src: url("../fonts/roboto-regular.woff2") format("woff2"), url("../fonts/roboto-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'robotothin';
+  src: url("../fonts/roboto-thin.woff2") format("woff2"), url("../fonts/roboto-thin.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'robotothin_italic';
+  src: url("../fonts/roboto-thinitalic.woff2") format("woff2"), url("../fonts/roboto-thinitalic.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
 body {
-  background: linear-gradient(to left bottom, rgba(202, 202, 204, 0.9), rgba(123, 122, 130, 0.95)) no-repeat;
-  height: 97.5vh;
+  background: linear-gradient(to left bottom, rgba(232, 232, 234, 0.9), rgba(216, 215, 223, 0.95)) no-repeat;
+  height: 100vh;
   margin: 0 auto;
-  font-family: 'gaegubold', sans-serif; }
+  font-family: 'robotoregular', sans-serif;
+  color: #373639; }
 
 /* Greeting -----------------------(1)--------------------------------*/
 .welcome_text {
   position: fixed;
-  top: 20%;
+  top: 23%;
   left: 30%;
-  font-size: 110px;
-  letter-spacing: 13px;
-  color: #232323; }
+  font-size: 65px;
+  letter-spacing: 8px;
+  color: #98C444; }
 
 .cursor {
   height: 10px;
-  border: 2px solid rgba(235, 255, 45, 0.91);
+  border: 2px solid rgba(57, 57, 57, 0.81);
   animation-name: cursor;
-  animation-duration: 800ms;
+  animation-duration: 900ms;
   animation-timing-function: ease;
   animation-delay: 0ms;
   animation-iteration-count: infinite;
@@ -50,79 +105,59 @@ body {
   100% {
     opacity: 1; } }
 
-.underWelcomeLine {
-  position: fixed;
-  top: 53%;
-  left: 28%;
-  animation-name: underWelcomeLine;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 2600ms;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: forwards; }
-
-@keyframes underWelcomeLine {
-  from {
-    width: 0;
-    border: 0 solid rgba(235, 255, 45, 0.66); }
-  to {
-    width: 580px;
-    border: 4px solid rgba(235, 255, 45, 0.6); } }
-
-.welcomeUnderlineText {
+.LogInRegBtns {
   position: fixed;
   font-size: 33px;
   opacity: 0;
-  top: 53%;
+  top: 44%;
   left: -1%;
-  animation-name: logInText;
-  animation-duration: 1400ms;
+  animation-name: LogInRegBtns;
+  animation-duration: 1300ms;
   animation-timing-function: cubic-bezier(0, 0.47, 0.32, 1.97);
-  animation-delay: 3700ms;
+  animation-delay: 2700ms;
   animation-iteration-count: 1;
   animation-direction: normal;
   animation-fill-mode: forwards; }
 
-@keyframes logInText {
+@keyframes LogInRegBtns {
   from {
     opacity: 0;
-    top: 53%;
     left: -1%; }
   to {
     opacity: 1;
-    top: 53%;
-    left: 29%; } }
+    left: 35%; } }
 
-.fbIcon {
-  width: 30px;
-  height: 30px;
-  margin-left: 13px;
-  position: relative;
-  top: 6px;
-  transition: all 0.2s ease-in-out; }
-  .fbIcon:hover {
-    transform: scale(1.3); }
+.welcomeUnderBtnText {
+  position: fixed;
+  font-size: 28px;
+  opacity: 0;
+  top: 62%;
+  left: -1%;
+  animation-name: welcomeUnderBtnText;
+  animation-duration: 1300ms;
+  animation-timing-function: cubic-bezier(0, 0.47, 0.32, 1.97);
+  animation-delay: 3400ms;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards; }
 
-.gIcon {
-  width: 30px;
-  height: 30px;
-  margin-left: 13px;
-  position: relative;
-  top: 6px;
-  transition: all 0.2s ease-in-out; }
-  .gIcon:hover {
-    transform: scale(1.3); }
+@keyframes welcomeUnderBtnText {
+  from {
+    opacity: 0;
+    left: -1%; }
+  to {
+    opacity: 1;
+    left: 22%; } }
 
 .LogInBtn {
   margin: 0 18px;
-  background: #3B5998;
-  color: white;
+  background: #94bc2c;
+  color: black;
   text-align: center;
   text-decoration: none;
   border-radius: 25%;
   padding: 5px 10px;
-  border: 3px solid #3B5998;
+  border: 3px solid #94bc2c;
   box-shadow: #444444;
   font-family: 'gaeguregular', sans-serif;
   font-size: 25px;
@@ -130,28 +165,13 @@ body {
   outline: none; }
   .LogInBtn:hover {
     transform: scale(1.1);
-    background-color: #d3d3d3;
-    color: #3B5998; }
+    background-color: #d3d3d3; }
 
-.topLine {
-  position: fixed;
-  top: 6%;
-  border: 1px solid rgba(86, 86, 86, 0.81);
-  width: 100vw; }
-
-.topLights {
-  position: fixed;
-  top: 1.5%;
-  left: 45%; }
-
-.welcomePage {
-  border: 5px solid red; }
-
-/* Registration Form -----------------------(2)--------------------------------*/
+/* Registration Form -----------------------(2.1)--------------------------------*/
 .regForm {
   position: fixed;
-  left: 35vw;
-  top: 33vh; }
+  left: 36vw;
+  top: 17vh; }
 
 .regForm input {
   margin-bottom: 10px;
@@ -204,30 +224,379 @@ body {
   top: 6px;
   left: 24px; }
 
+.phoneIcon {
+  width: 20px;
+  position: relative;
+  top: 6px;
+  left: 24px; }
+
 .tooltip {
   color: #fff;
   margin-left: 3px;
-  margin-top: 2px;
-  padding: 2px 10px 2px 20px;
+  margin-top: -20px;
+  padding: 10px 2px 10px;
   position: absolute;
   text-decoration: none;
   width: 330px;
   z-index: 10; }
 
-/* Main Page -----------------------(3)--------------------------------*/
-.worldMap {
-  animation-name: worldMap;
-  animation-duration: 2500ms;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0ms;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: forwards; }
+.agreement {
+  font-size: 10px;
+  margin-left: 20px;
+  position: relative; }
 
-@keyframes worldMap {
-  from {
+#checkBox1 {
+  height: 20px;
+  width: auto; }
+
+#checkBox2 {
+  height: 20px;
+  width: auto; }
+
+.checkBoxLabel {
+  left: 25px;
+  display: block;
+  position: relative;
+  bottom: 28px;
+  margin-bottom: -40px;
+  width: 250px; }
+
+.tooltipAgreement {
+  color: rgba(244, 0, 0, 0.9);
+  position: relative;
+  left: 24px;
+  display: block;
+  top: 5px; }
+
+/* Log In Form -----------------------(2.2)--------------------------------*/
+.modal {
+  position: fixed;
+  top: 25.7%;
+  left: 24.5%;
+  width: 665px;
+  font-size: 12px;
+  border: 1px solid #98C444;
+  border-radius: 5px;
+  background: linear-gradient(to left bottom, #d6d6d8, #acabb3); }
+
+.modal > .header {
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px; }
+
+.modal > .content {
+  padding: 10px 5px; }
+
+.modal > .content input {
+  margin-bottom: 10px;
+  height: 30px;
+  width: 260px;
+  padding-left: 30px;
+  background-color: transparent;
+  outline: 0;
+  border-width: 0 0 2px 0;
+  border-bottom-color: rgba(147, 147, 147, 0.85); }
+
+.modal > .content button {
+  margin-top: 27px;
+  margin-left: 81px;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 1px 15px;
+  border-radius: 5px;
+  user-select: none;
+  position: relative;
+  display: inline-block;
+  height: 3rem;
+  border: 1px solid transparent;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-decoration: none;
+  background-repeat: repeat-x; }
+  .modal > .content button:hover {
+    transform: scale(1.1); }
+
+.logInBtn {
+  min-width: 150px;
+  display: block;
+  padding-left: 0;
+  padding-right: 0;
+  border-color: #98C444;
+  box-shadow: inset 0 1px 0 0 #73ff4e;
+  background-color: #98C444;
+  color: #fff;
+  text-shadow: 1px 1px 0 #8e8d95;
+  opacity: 0.9; }
+  .logInBtn:hover {
+    opacity: 1; }
+
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: rgba(199, 199, 199, 0.97);
+  border-radius: 18px;
+  border: 1px solid #858484; }
+  .modal > .close:hover {
+    transform: scale(1.1); }
+
+.logo {
+  width: 33%;
+  position: absolute;
+  right: 50px;
+  top: 10px; }
+
+/* Main Page -----------------------(3)--------------------------------*/
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: block; }
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  height: inherit; }
+
+.navLine {
+  width: 100%;
+  background-color: #3d805c;
+  position: fixed; }
+
+nav {
+  font-family: 'robotobold_italic', sans-serif;
+  text-align: center;
+  position: relative;
+  top: 5px; }
+
+.navLineLogo {
+  position: absolute;
+  width: 65px;
+  left: 0;
+  top: -30px;
+  z-index: 1000; }
+
+.logoNameMain {
+  position: absolute;
+  color: rgba(172, 172, 172, 0.97);
+  font-size: 25px;
+  font-family: 'robotolight_italic', sans-serif;
+  left: 70px;
+  top: -10px;
+  z-index: 1000; }
+
+.menu li a {
+  margin-right: 30px;
+  color: #e6e6e6; }
+
+nav > ul {
+  width: 100%;
+  position: relative;
+  top: -4px; }
+
+nav ul > li {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer; }
+  nav ul > li:hover {
+    text-decoration: underline; }
+  nav ul > li:nth-of-type(4) {
+    top: -3px;
+    float: right; }
+    nav ul > li:nth-of-type(4):hover .chatIcon {
+      transform: scale(1.4);
+      transition-timing-function: ease-in-out;
+      transition-duration: 350ms; }
+  nav ul > li:nth-of-type(3) {
+    top: -2px;
+    float: right; }
+    nav ul > li:nth-of-type(3):hover .menuProfileIcon {
+      transform: scale(1.4);
+      transition-timing-function: ease-in-out;
+      transition-duration: 350ms; }
+
+.chatIcon {
+  width: 25px;
+  margin-right: 28px; }
+
+.menuProfileIcon {
+  width: 20px;
+  margin-right: 8px;
+  position: relative;
+  top: 2px; }
+
+ul.dropMenu {
+  position: absolute;
+  margin-top: -10px; }
+
+ul.dropMenu li {
+  width: 150px;
+  height: 65px;
+  right: 60px;
+  top: 23px;
+  font-size: 12px;
+  background: #4f8d6d;
+  color: white;
+  padding-top: 10px;
+  margin-bottom: -20px; }
+  ul.dropMenu li:hover {
+    background: #45a66e; }
+  ul.dropMenu li:nth-of-type(2) {
+    margin-top: -35px; }
+  ul.dropMenu li:last-child {
+    border-radius: 0px 0px 8px 8px;
+    padding-top: 25px;
+    margin-top: -25px; }
+    ul.dropMenu li:last-child:hover .exitProfileIcon {
+      transform: scale(1.3);
+      transition-timing-function: ease-in-out;
+      transition-duration: 350ms; }
+
+.exitProfileIcon {
+  width: 20px;
+  margin-right: -5px;
+  position: relative;
+  top: 5px; }
+
+ul.dropMenu li {
+  display: none; }
+
+ul.dropMenu li a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  left: 15px; }
+
+li:hover > ul.dropMenu li {
+  display: block; }
+
+li:hover > ul.dropMenu {
+  perspective: 1000px; }
+  li:hover > ul.dropMenu li {
     opacity: 0;
-    transform: scale(0.2); }
-  to {
-    opacity: 1;
-    transform: scale(1); } }
+    transform-origin: top right; }
+    li:hover > ul.dropMenu li:nth-child(1) {
+      animation-name: menuReverse;
+      animation-duration: 250ms;
+      animation-delay: -100ms;
+      animation-transition-timing-function: ease-in-out;
+      animation-fill-mode: forwards; }
+    li:hover > ul.dropMenu li:nth-child(2) {
+      animation-name: menuReverse;
+      animation-duration: 250ms;
+      animation-delay: 0ms;
+      animation-transition-timing-function: ease-in-out;
+      animation-fill-mode: forwards; }
+    li:hover > ul.dropMenu li:nth-child(3) {
+      animation-name: menuReverse;
+      animation-duration: 250ms;
+      animation-delay: 100ms;
+      animation-transition-timing-function: ease-in-out;
+      animation-fill-mode: forwards; }
+    li:hover > ul.dropMenu li:nth-child(4) {
+      animation-name: menuReverse;
+      animation-duration: 250ms;
+      animation-delay: 200ms;
+      animation-transition-timing-function: ease-in-out;
+      animation-fill-mode: forwards; }
+    li:hover > ul.dropMenu li:nth-child(5) {
+      animation-name: menuReverse;
+      animation-duration: 250ms;
+      animation-delay: 300ms;
+      animation-transition-timing-function: ease-in-out;
+      animation-fill-mode: forwards; }
+    li:hover > ul.dropMenu li:nth-child(6) {
+      animation-name: menuReverse;
+      animation-duration: 250ms;
+      animation-delay: 400ms;
+      animation-transition-timing-function: ease-in-out;
+      animation-fill-mode: forwards; }
+
+@keyframes menuReverse {
+  0% {
+    opacity: 0;
+    transform: rotate(-30deg) translateX(30px); }
+  100% {
+    transform: rotate(0deg) translateX(0px);
+    opacity: 1; } }
+
+.profileAsideLines {
+  border: 0.5px solid white;
+  position: relative;
+  right: 15px;
+  bottom: 3px; }
+
+/* Main Page left_block -----------------------(3.1)--------------------------------*/
+.colLeft {
+  float: left;
+  width: 30%;
+  display: inline-block;
+  margin-top: 5%;
+  margin-left: 12%; }
+
+.addAnnouncementBtn {
+  position: relative;
+  left: 27px;
+  top: 25px;
+  font-size: 20px;
+  padding: 10px 50px;
+  border-radius: 10px;
+  border: 1px solid #4f8d6d;
+  background-color: #4f8d6d;
+  outline: none;
+  cursor: pointer; }
+  .addAnnouncementBtn:hover {
+    background-color: rgba(192, 192, 192, 0.87);
+    box-shadow: 4px 7px 8px #9c9c9c;
+    transform: scale(1.1);
+    border-bottom-width: 2px; }
+
+/* Main Page adding Announcement -----------------------(3.1.1)--------------------------------*/
+.addBtnIcon {
+  width: 20px;
+  margin-right: 5px; }
+
+.announcementInputStyle {
+  height: 29px;
+  border: none;
+  font-size: 14px;
+  width: 200px;
+  border-radius: 20px;
+  background-color: #4f8d6d;
+  outline: none;
+  color: #fff;
+  padding-left: 30px; }
+  .announcementInputStyle option {
+    background: #429862;
+    padding-left: 5px; }
+
+form label {
+  align-items: center; }
+  form label:hover {
+    cursor: pointer; }
+
+form input[type="radio"] {
+  margin: 0 5px 0 10px;
+  outline: none; }
+
+.announcementInput {
+  border: 1px solid rgba(197, 210, 201, 0.71);
+  border-radius: 3px;
+  height: 25px;
+  width: 500px;
+  font-size: 15px;
+  font-family: 'robotoregular', sans-serif;
+  padding-left: 5px; }
+
+.announcementTextArea {
+  width: 350px;
+  height: 100px; }
