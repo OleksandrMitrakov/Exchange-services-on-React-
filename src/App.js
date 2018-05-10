@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './sass/main.css';
 import Welcome from './pages/WelcomePage';
-import ValidationForm from "./pages/ValidationForm";
-import BasicMap from "./pages/MainPage";
+import RegistrationForm from "./pages/RegistrationForm";
+import MainPage from "./pages/MainPage";
+import AddAnnouncementPage from "./pages/MainPageComponents/addAnnouncementPage";
 import {
     HashRouter,
-    Route,
-    Link
+    Route
 } from 'react-router-dom';
 
 class TopLineStatus extends React.Component {
@@ -26,9 +26,9 @@ class TopLineStatus extends React.Component {
         return (
             <div>
                 <div className="topLights">
-                    <div style={{...activePageStyle, backgroundColor: this.props.activePage === 1 ? 'orange' : '#a9a9a9'}}> </div>
-                    <div style={{...activePageStyle, backgroundColor: this.props.activePage === 2 ? 'orange' : '#a9a9a9'}}> </div>
-                    <div style={{...activePageStyle, backgroundColor: this.props.activePage === 3 ? 'orange' : '#a9a9a9'}}> </div>
+                    <div style={{...activePageStyle, backgroundColor: this.props.activePage === 1 ? '#98C444' : '#a9a9a9'}}> </div>
+                    <div style={{...activePageStyle, backgroundColor: this.props.activePage === 2 ? '#98C444' : '#a9a9a9'}}> </div>
+                    <div style={{...activePageStyle, backgroundColor: this.props.activePage === 3 ? '#98C444' : '#a9a9a9'}}> </div>
                 </div>
                 <div className="topLine" style={{zIndex: 1000}}> </div>
             </div>
@@ -51,21 +51,17 @@ class App extends React.Component {
         this.setState({
             activePage: page
         })
-    }
+    };
 
     render() {
         return (
             <HashRouter>
                 <div>
-                    <TopLineStatus activePage={this.state.activePage}/>
-                    <ul className="navigation">
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/form">Registration Form</Link></li>
-                        <li><Link to="/form/main">Main Page</Link></li>
-                    </ul>
+                    {/*<TopLineStatus activePage={this.state.activePage}/>*/}
                     <Route exact path="/" render={ props => <Welcome changeActivePage={this.changeActivePage} {...props}/> }/>
-                    <Route exact path="/form" render={ props => <ValidationForm changeActivePage={this.changeActivePage} {...props}/> }/>
-                    <Route exact path="/form/main" render={ props => <BasicMap changeActivePage={this.changeActivePage} {...props}/> }/>
+                    <Route exact path="/form" render={ props => <RegistrationForm changeActivePage={this.changeActivePage} {...props}/> }/>
+                    <Route exact path="/main" render={ props => <MainPage changeActivePage={this.changeActivePage} {...props}/> }/>
+                    <Route exact path="/addAnnouncement" render={ props => <AddAnnouncementPage changeActivePage={this.changeActivePage} {...props}/> }/>
                 </div>
             </HashRouter>
         )
