@@ -274,6 +274,7 @@ body {
   top: 25.7%;
   left: 24.5%;
   width: 665px;
+  height: 228px;
   font-size: 12px;
   border: 1px solid #98C444;
   border-radius: 5px;
@@ -444,7 +445,7 @@ ul.dropMenu li {
   right: 60px;
   top: 23px;
   font-size: 12px;
-  background: #4f8d6d;
+  background: #3d805c;
   color: white;
   padding-top: 10px;
   margin-bottom: -20px; }
@@ -538,10 +539,11 @@ li:hover > ul.dropMenu {
 /* Main Page left_block -----------------------(3.1)--------------------------------*/
 .colLeft {
   float: left;
-  width: 30%;
   display: inline-block;
-  margin-top: 5%;
-  margin-left: 12%; }
+  margin-top: 20px;
+  margin-left: 12%;
+  padding-left: 10px;
+  border: 1px solid grey; }
 
 .addAnnouncementBtn {
   position: relative;
@@ -565,38 +567,86 @@ li:hover > ul.dropMenu {
   width: 20px;
   margin-right: 5px; }
 
+.leftSideMain {
+  padding-top: 100px;
+  margin-left: 12%;
+  width: 30%;
+  float: left; }
+
 .announcementInputStyle {
   height: 29px;
   border: none;
   font-size: 14px;
-  width: 200px;
-  border-radius: 20px;
-  background-color: #4f8d6d;
+  width: 350px;
+  border-radius: 8px;
+  background-color: #4c9173;
   outline: none;
   color: #fff;
-  padding-left: 30px; }
+  padding-left: 10px; }
   .announcementInputStyle option {
-    background: #429862;
+    background: #479869;
     padding-left: 5px; }
 
-form label {
-  align-items: center; }
-  form label:hover {
-    cursor: pointer; }
-
-form input[type="radio"] {
-  margin: 0 5px 0 10px;
-  outline: none; }
+form {
+  margin-bottom: 50px; }
+  form label {
+    align-items: center; }
+    form label:hover {
+      cursor: pointer; }
+  form input[type="radio"] {
+    margin: 0 5px 0 10px;
+    outline: none; }
 
 .announcementInput {
   border: 1px solid rgba(197, 210, 201, 0.71);
   border-radius: 3px;
   height: 25px;
-  width: 500px;
+  width: 350px;
+  font-size: 15px;
+  font-family: 'robotoregular', sans-serif;
+  padding-left: 5px;
+  transition: width 0.4s ease-in-out; }
+  .announcementInput:focus {
+    width: 98%; }
+
+.announcementInputPrice {
+  border: 1px solid rgba(197, 210, 201, 0.71);
+  border-radius: 3px;
+  height: 25px;
+  width: 350px;
   font-size: 15px;
   font-family: 'robotoregular', sans-serif;
   padding-left: 5px; }
 
 .announcementTextArea {
   width: 350px;
-  height: 100px; }
+  height: 100px;
+  transition: width 0.4s ease-in-out; }
+  .announcementTextArea:focus {
+    width: 98%;
+    height: 200px; }
+
+.yourAnnouncement {
+  float: left;
+  display: inline-block;
+  margin-top: 7%;
+  margin-left: 12%;
+  color: #878787;
+  padding-left: 5px; }
+
+.label {
+  display: block;
+  width: 100%;
+  margin: 1rem 0 0.5rem 0; }
+
+.fontRegular {
+  font-family: 'robotolight', sans-serif; }
+
+.addPhotoContainer {
+  text-align: center;
+  position: relative;
+  top: 20px;
+  font-size: 30px;
+  transition: transform 0.4s ease-in-out; }
+  .addPhotoContainer:hover {
+    transform: scale(1.2); }

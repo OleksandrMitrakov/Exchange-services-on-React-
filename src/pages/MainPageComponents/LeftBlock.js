@@ -63,7 +63,7 @@ class LeftBlock extends Component {
             return <Redirect to="/addAnnouncement"/>;
 
         return (
-            <div className="colLeft container">
+            <div className="leftSideMain container">
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                     industry's standard dummy text ever since the 1500s.
                 </p>
