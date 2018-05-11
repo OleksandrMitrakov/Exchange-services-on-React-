@@ -3,6 +3,7 @@ import '../.././sass/main.css';
 import {RadioGroup, Radio} from 'react-radio-group'
 import NavLine from './NavLine'
 
+
 class AddAnnouncementPage extends Component {
     constructor(props) {
         super(props);
@@ -10,22 +11,26 @@ class AddAnnouncementPage extends Component {
         this.state = {
             selectedValueGroup1: "private",
             selectedValueGroup2: "offer",
-            inputValue: "",
-            textareaValue: "Wpisz treść oferty"
+            inputValue: " ",
+            textareaValue: " ",
+            priceValue: ""
         };
+
     };
 
-    handleInputChange(e) {
+
+
+    handleInputChange = (e) => {
         this.setState({
             inputValue: e.target.value
         });
-    }
+    };
 
-    handleTextareaChange(e) {
+    handleTextareaChange = (e) => {
         this.setState({
             textareaValue: e.target.value
         });
-    }
+    };
 
     handleChange1 = (value) => {
         this.setState({
@@ -40,15 +45,36 @@ class AddAnnouncementPage extends Component {
         })
     };
 
+    handleChangePrice = (e) => {
+        this.setState({
+            priceValue: e.target.value
+
+        })
+    };
+
     render() {
+
+        const yourAnnouncementStyle = {
+            backgroundColor: '#686868',
+            color: '#ededed',
+            padding: '10px 5px',
+            width: '100%',
+            marginLeft: '-10px',
+            marginTop: '0px'
+        };
 
         return (
             <div>
                 <NavLine/>
+                <div className="yourAnnouncement container">
+                    <h3>Opublikuj ogłoszenie</h3>
+                    <hr/>
+                </div>
                 <div className="colLeft container">
                     <div className="containerForAnnouncementSettings">
                         <form>
-                            <h2>Wybierz kategorię</h2>
+                            <h4 style={yourAnnouncementStyle}>Twoje ogłoszenie</h4>
+                            <h4>Wybierz kategorię *</h4>
                             <select className="announcementInputStyle">
                                 <option value="Nieruchomości">Nieruchomości</option>
                                 <option value="Dom i Ogród">Dom i Ogród</option>
@@ -60,7 +86,7 @@ class AddAnnouncementPage extends Component {
                                 <option value="Zdrowie i Uroda">Zdrowie i Uroda</option>
                                 <option value="Muzyka i Rozrywka">Muzyka i Rozrywka</option>
                             </select>
-                            <h2>Jesteś *</h2>
+                            <h4>Jesteś *</h4>
                             <RadioGroup
                                 name="profLevel"
                                 selectedValue={this.state.selectedValueGroup1}
@@ -94,7 +120,7 @@ class AddAnnouncementPage extends Component {
                                 Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very
                                 popular during the Renaissance.
                             </p>
-                            <h2>Typ ogłoszenia *</h2>
+                            <h4>Typ ogłoszenia *</h4>
                             <RadioGroup
                                 name="typeOfAnnouncement"
                                 selectedValue={this.state.selectedValueGroup2}
@@ -107,7 +133,7 @@ class AddAnnouncementPage extends Component {
                                 </label>
                             </RadioGroup>
                             <label>
-                                <h2>Tytuł *</h2>
+                                <h4>Tytuł *</h4>
                                 <input
                                     className="announcementInput"
                                     type="text"
@@ -116,13 +142,35 @@ class AddAnnouncementPage extends Component {
                                 />
                             </label>
                             <label>
-                                <h2>Treść Oferty *</h2>
+                                <h4>Treść Oferty *</h4>
                                 <textarea
                                     className="announcementTextArea"
                                     value={this.state.textareaValue}
                                     onChange={this.handleTextareaChange}
                                 />
                             </label>
+                            <label>
+                                <h4>Cena</h4>
+                                <input
+                                    className="announcementInputPrice"
+                                    type="text"
+                                    value={this.state.priceValue}
+                                    onChange={this.handleChangePrice}
+                                />
+                                <span style={{marginLeft: '-30px'}}>zł</span>
+                            </label>
+                            <section id="pictures" className="toDisable">
+                                <div className="label">
+                                    Photos:
+                                    <span className="fontRegular">reklama fotograficzna jest 7 razy bardziej popularna niż reklama bez zdjęcia</span>
+                                </div>
+                                <aside>
+                                    <div className="photoGallery">
+                                        <input type="file"/>
+                                    </div>
+                                </aside>
+
+                            </section>
                         </form>
                     </div>
                 </div>
