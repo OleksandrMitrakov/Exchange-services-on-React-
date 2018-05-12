@@ -10,8 +10,7 @@ Technologies used:
 ES 6
 React
 SASS
-Fetch, API (cards image): https://deckofcardsapi.com/
 
 Bugs/ To do list:
 
-You can preview the project here: http://bljr.surge.sh/#/ Please note however, that it is not the final version yet.
+You can preview the project here:
